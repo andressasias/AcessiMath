@@ -1,74 +1,27 @@
-var http = require('http');
-var fs = require('fs');
-var url = require('url');
+const path = require('path')
+const express = require('express')
 
-var pathPage = function(page){
-      return __dirname + "/src/html/" + page + ".html";
-};
+const db = require("./db")
 
-var router = function(pathname){
-    if(pathname && pathname != "/"){
-        var exist = fileExists( pathPage(pathname) );
-        return exist ? pathPage(pathname) : pathPage("erro");
-    }
-    return pathPage("index");
-};
+const app = express()
 
-var fileExists = function(filePath){
-    try{
-        return fs.statSync(filePath).isFile();
-    }catch (err){
-        return false;
-    }
-};
+app.use(express.static('src'))
 
-var server = http.createServer(function (request, response) {
-    var page = router( url.parse(request.url).pathname );
-    fs.readFile(page, function(err, data){
-        response.end(data);
-    });
-});
+app.get('/', (req, res) => {
+    res.sendFile(path.resolve('src/html/index.html'));
+})
 
-server.listen(3000, function () {
-    console.log('Servidor rodando na porta 3000');
-});
+app.get('/atividades', (req, res) => {
+    res.sendFile(path.resolve('src/html/atividades.html'));
+})
 
+app.get('/api/atividades/:nivel', async(req, res) => {
+    const { params: { nivel } } = req
+    const row = await db.selectAtividadeByLevel(nivel)
+    res.json(row);
+    // res.json({ id })
+})
 
-
-//index.js
-(async () => {
-
-    //"pegando" functions que foram exportadas no db.js e colocando em const db
-    const db = require("./db");
-    console.log("Começou")
-
-    console.log("select das atividades")
-    const atividades = await db.selectAtividades();
-    console.log(atividades);
-
-    /*
-    console.log("insert do cliente");
-    const result = await db.insertCustomer({nome: "Zé", idade: 18, uf: "SP"})
-    console.log(result);
-     console.log("update do cliente");
-    const result2 = await db.updateCustomer(4, {nome: "Zé José", idade: 19, uf: "SP"})
-    console.log(result2);
-
-    console.log("select dos clientes 2")
-    const clientes2 = await db.selectCustomers();
-    console.log(clientes2);
-
-    console.log("delete do cliente");
-    const result3 = await db.deleteCustomer(4)
-    console.log(result3);
-
-    console.log("select dos clientes 2")
-    const clientes3 = await db.selectCustomers();
-    console.log(clientes3);
-    */
-
-  
-
-   
-
-})();
+app.listen(3000, () => {
+    console.log('Ok')
+})

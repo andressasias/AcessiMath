@@ -1,50 +1,66 @@
 <html>
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <link rel="stylesheet" href="../css/style.css">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <link rel="stylesheet" href="/css/style.css" />
     <title>Acessimath</title>
-</head>
-<body>
+  </head>
+  <body>
     <nav class="navbar">
-        <div class="navbrand">
-            <h1><a href="./index.html" class="brand">AcessiMath</a></h1>
-            <div class="burger" id="burger">
-                <span class="burger-open">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="16">
-                        <g fill="#252a32" fill-rule="evenodd">
-                            <path d="M0 0h24v2H0zM0 7h24v2H0zM0 14h24v2H0z" />
-                        </g>
-                    </svg>
-                </span>
-                <span class="burger-close">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20">
-                        <path fill="#252a32" fill-rule="evenodd" d="M17.778.808l1.414 1.414L11.414 10l7.778 7.778-1.414 1.414L10 11.414l-7.778 7.778-1.414-1.414L8.586 10 .808 2.222 2.222.808 10 8.586 17.778.808z" />
-                    </svg>
-                </span>
-            </div>
+      <div class="navbrand">
+        <h1><a href="/" class="brand">AcessiMath</a></h1>
+        <div class="burger" id="burger">
+          <span class="burger-open">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="16">
+              <g fill="#252a32" fill-rule="evenodd">
+                <path d="M0 0h24v2H0zM0 7h24v2H0zM0 14h24v2H0z" />
+              </g>
+            </svg>
+          </span>
+          <span class="burger-close">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20">
+              <path
+                fill="#252a32"
+                fill-rule="evenodd"
+                d="M17.778.808l1.414 1.414L11.414 10l7.778 7.778-1.414 1.414L10 11.414l-7.778 7.778-1.414-1.414L8.586 10 .808 2.222 2.222.808 10 8.586 17.778.808z"
+              />
+            </svg>
+          </span>
         </div>
-        <ul class="menu" id="menu">
-            <li class="menu-item"><a href="/" class="menu-link">Home</a></li>
-            <li class="menu-item"><a href="#" class="menu-link">Sobre</a></li>
-        </ul>
+      </div>
+      <ul class="menu" id="menu">
+        <li class="menu-item"><a href="/" class="menu-link">Home</a></li>
+        <li class="menu-item"><a href="#" class="menu-link">Sobre</a></li>
+      </ul>
     </nav>
     <div class="container">
-        <h2>Título atividade</h2>
-        <div class="option">
-            <p class="description">Resposta 1</p>
-        </div>
-        <div class="option">
-            <p class="description">Resposta 2</p>
-        </div>
-        <div class="option">
-            <p class="description">Resposta 3</p>
-        </div>
-        <div class="option">
-          <p class="description">Resposta 4</p>
+      <div id="app">
+        <h3>Atividades {{ level }} - {{ currentQuestion.titulo }}</h3>
+        <h2>{{ currentQuestion.descricao }}</h2>
+
+        <ol>
+          <li
+            v-for="item in currentQuestion.questions"
+            v-on:click="selectAnswer(item)"
+            class="option-atividades"
+          >
+            <div class="question">
+              <p>{{ item.question }}</p>
+            </div>
+              
+            <img
+              v-if="item.isImage"
+              :src="'/img/' + item.description"
+              width="20px"
+            />
+            <h2 v-if="!item.isImage">{{ item.description }}</h2>
+          </li>
+        </ol>
       </div>
     </div>
 
-    <script type="text/javascript" src="../js/script.js"></script>
-</body>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <script type="text/javascript" src="/js/script-atividades.js"></script>
+  </body>
 </html>

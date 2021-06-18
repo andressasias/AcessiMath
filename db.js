@@ -1,6 +1,5 @@
 // db.js
 async function connect(){
-
   if(global.connection && global.connection.state !== 'disconnected'){
       return global.connection;
   }
@@ -10,6 +9,7 @@ async function connect(){
   global.connection = connection;
   return connection;
 }
+
 connect();
 
 //select
@@ -18,6 +18,14 @@ async function selectAtividades(){
   const conn = await connect();
   //faz a query e retorna um array das linhas
   const [rows] = await conn.query('SELECT * FROM atividades;');
+  return rows;
+}
+
+async function selectAtividadeByLevel(nivel){
+  //estabelece conexão
+  const conn = await connect();
+  //faz a query e retorna um array das linhas
+  const [rows] = await conn.query(`SELECT * FROM atividades WHERE nivel=${nivel};`);
   return rows;
 }
 
@@ -45,4 +53,4 @@ async function deleteCustomer(id){
 }
 
 //exportando functions
-module.exports = {selectAtividades, insertCustomer, updateCustomer, deleteCustomer}
+module.exports = {selectAtividades, insertCustomer, updateCustomer, deleteCustomer, selectAtividadeByLevel}
