@@ -16,7 +16,9 @@ const getQuestions = (question) => {
   return ['A', 'B', 'C', 'D'].map(x => ({
     question: x.toLowerCase(),
     description: question[`resposta${x}${withImg}`],
-    isImage: Boolean(question.contemImgRes)
+    isImage: Boolean(question.contemImgRes),
+    isImageQuestion: Boolean(question.contemImgDesc),
+    ImageQuestion: question.descricaoImg
   }))
 }
 
@@ -32,7 +34,6 @@ window.addEventListener('DOMContentLoaded', (event) => {
     },
     methods: {
       selectAnswer: function(item) {
-        console.log(item)
         if (item.question === this.currentQuestion.respostaCorreta) {
           Swal.fire({
             title: 'Muito bem!',
@@ -40,11 +41,13 @@ window.addEventListener('DOMContentLoaded', (event) => {
             imageWidth: 150,
             text: 'Assim você vai longe!',
             confirmButtonText: 'Continuar aprendendo'
+          }).then((result) => {
+            if (result.isConfirmed) {
+              this.currentQuestionIndex = this.currentQuestionIndex + 1;
+              this.currentQuestion = this.questions[this.currentQuestionIndex]
+            }
           })
-          this.currentQuestionIndex = this.currentQuestionIndex + 1;
-          this.currentQuestion = this.questions[this.currentQuestionIndex]
           if (!this.currentQuestion) {
-            //this.gameOver = 
             Swal.fire({
               title: 'Parabéns!',
               imageUrl: 'https://i.pinimg.com/originals/b8/4a/3e/b84a3eb595247aae0a6095943d24edf4.gif',
@@ -70,13 +73,9 @@ window.addEventListener('DOMContentLoaded', (event) => {
             cancelButtonText: 'Tentar depois'
           }).then((result) => {
             if (result.isConfirmed) {
-              console.log("vou fazer novamente")
+
             }else{
-              console.log("vou fazer depois")
-              console.log(this.questions)
               this.questions.push(this.questions[this.currentQuestionIndex])
-              console.log("novo array")
-              console.log(this.questions)
               this.currentQuestionIndex = this.currentQuestionIndex + 1;
               this.currentQuestion = this.questions[this.currentQuestionIndex]
             }
