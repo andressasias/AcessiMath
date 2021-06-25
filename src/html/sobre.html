@@ -35,41 +35,19 @@
       </ul>
     </nav>
     <div class="container">
-      <div id="app">
-        <div class="close">
-          <img src="../img/close.png">
-        </div>
-        <h3>Atividades {{ level }} - {{ currentQuestion.titulo }}</h3>
-        <h2>{{ currentQuestion.descricao }}</h2>
-        <img
-        v-if="currentQuestion.questions[0].isImageQuestion"
-        :src="'/img/' + currentQuestion.questions[0].ImageQuestion"
-        width="20px"
-        />
-
-        <ol>
-          <li
-            v-for="item in currentQuestion.questions"
-            v-on:click="selectAnswer(item)"
-            class="option-atividades"
-          >
-            <div class="question">
-              <p>{{ item.question }}</p>
-            </div>
-              
-            <img
-              v-if="item.isImage"
-              :src="'/img/' + item.description"
-              width="20px"
-            />
-            <h2 v-if="!item.isImage">{{ item.description }}</h2>
-          </li>
-        </ol>
+      <h1 class="about-title">AcessiMath</h1>
+      <div class="about-text">
+        <p>Olá! Me chamo Andressa Sias (andressa@rede.ulbra.br) e sou aluna do curso de ciência da computação na Ulbra Gravataí. 
+          Desenvolvi o Acessimath para o meu projeto tecnológico de conclusão do curso, orientado pela professora Maria Adelina Raupp Sganzerla (maria.sganzerla@ulbra.br).</p>
+        <p>O Acessimath é uma prancha de comunicação desenvolvida para auxiliar pessoas dentro do espectro do autismo, 
+          em fase de aquisição do número, à auxiliar no aprendizado da matemática básica por meio de atividades apresentadas. 
+          A ideia é que o usuário trabalhe juntamente com um orientador/monitor. </p>
+        <p>São propostas atividades de identificação de números e quantidades, soma, subtração, multiplicação
+           e divisão tendo como universo numérico os algarismos do 1 ao 9. O sistema possui feedback com o objetivo de incentivar o usuário a continuar, 
+           mesmo em casos de erro, e utiliza figuras com temas do cotidiano para prender a sua atenção. </p>
       </div>
     </div>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
-    <script type="text/javascript" src="/js/script-atividades.js"></script>
+    <script type="text/javascript" src="/js/script.js"></script>
   </body>
 </html>
