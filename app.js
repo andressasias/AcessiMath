@@ -26,6 +26,6 @@ app.get('/api/atividades/:nivel', async(req, res) => {
     // res.json({ id })
 })
 //process.env.PORT
-app.listen(3000, () => {
+app.listen(process.env.PORT, () => {
     console.log('Ok')
 })

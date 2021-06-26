@@ -37,7 +37,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
         if (item.question === this.currentQuestion.respostaCorreta) {
           Swal.fire({
             title: 'Muito bem!',
-            imageUrl: 'https://media.giphy.com/media/2YpTTV69fQsH5BqxSm/giphy.gif',
+            imageUrl: '../img/happy.gif',
             imageWidth: 150,
             text: 'Assim você vai longe!',
             confirmButtonText: 'Continuar aprendendo'
@@ -67,7 +67,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
         } else {
           Swal.fire({
             title: 'Não foi dessa vez...',
-            imageUrl: 'https://i.pinimg.com/originals/3e/b5/f3/3eb5f331f37731fb9ce9def5cbf445fe.gif',
+            imageUrl: '../img/sad.gif',
             imageWidth: 150,
             text: 'mas estamos torcendo por você!',
             showCancelButton: true,

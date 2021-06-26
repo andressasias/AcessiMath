@@ -15,7 +15,7 @@
 }
 body {
   font-family: 'Roboto', sans-serif;
-  font-size: 1rem;
+  /*font-size: 1rem;*/
   font-weight: normal;
   line-height: 1.5;
   color: #252a32;
@@ -204,6 +204,7 @@ h2{
   align-items: center;
   border-radius: 50%;
   margin-right: 10px;
+  min-width: 50px;
 }
 
 .option-atividades .question p{
@@ -294,11 +295,6 @@ background: linear-gradient(0deg, rgba(67,165,234,1) 0%, rgba(241,245,248,1) 100
     font-size: 36px;
   }
 
-
-
-  .option-atividades img{
-    max-height: 150px;
-  }
   .option, .option-atividades{
     max-width:100%;
     width:auto;
