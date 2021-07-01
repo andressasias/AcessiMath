@@ -44,8 +44,8 @@ window.addEventListener('DOMContentLoaded', (event) => {
           }).then((result) => {
             if (result.isConfirmed) {
               //salvando última questão nos cookies, caso o user volte para a home
-              localStorage.setItem('lastQuestionIndex', this.currentQuestionIndex + 1); 
-              localStorage.setItem('lastLevel', this.questions[this.currentQuestionIndex + 1].nivel); 
+              //localStorage.setItem('lastQuestionIndex', this.currentQuestionIndex + 1); 
+              //localStorage.setItem('lastLevel', this.questions[this.currentQuestionIndex + 1].nivel); 
               this.currentQuestionIndex = this.currentQuestionIndex + 1;
               this.currentQuestion = this.questions[this.currentQuestionIndex]
 
@@ -80,8 +80,8 @@ window.addEventListener('DOMContentLoaded', (event) => {
 
             }else{
               //salvando última questão nos cookies, caso o user volte para a home
-              localStorage.setItem('lastQuestionIndex', this.currentQuestionIndex + 1); 
-              localStorage.setItem('lastLevel', this.questions[this.currentQuestionIndex + 1].nivel); 
+              //localStorage.setItem('lastQuestionIndex', this.currentQuestionIndex + 1); 
+              //localStorage.setItem('lastLevel', this.questions[this.currentQuestionIndex + 1].nivel); 
 
               this.questions.push(this.questions[this.currentQuestionIndex])
               this.currentQuestionIndex = this.currentQuestionIndex + 1;
@@ -108,10 +108,10 @@ window.addEventListener('DOMContentLoaded', (event) => {
             console.log(data)
             console.log(data.length)
 
-            for(var i = localStorage.getItem('lastQuestionIndex') - 1; i <  data.length; i++){
+           /* for(var i = localStorage.getItem('lastQuestionIndex') - 1; i <  data.length; i++){
               console.log("comecei")
               console.log(data[0])
-            }
+            }*/
 
             this.questions = data.map(x => {
               console.log(x);
@@ -121,6 +121,9 @@ window.addEventListener('DOMContentLoaded', (event) => {
                     })
             })
             
+            this.currentQuestion = this.questions[0]
+              this.level = id;
+              /*
             if(localStorage.getItem('lastQuestionIndex') && localStorage.getItem('lastLevel') == id){
               
               console.log("já tava fazendo antes")
@@ -129,7 +132,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
             }else{
               this.currentQuestion = this.questions[0]
               this.level = id;
-            }
+            }*/
           })
           .catch(err => {
             console.log('err', err)

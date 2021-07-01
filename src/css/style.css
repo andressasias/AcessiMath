@@ -217,11 +217,6 @@ h2{
   text-transform: uppercase;
 }
 
-.option-atividades img{
-  width: auto;
-  max-height: 70px;
-}
-
 .option{
   display: block;
 }
@@ -288,33 +283,59 @@ background: linear-gradient(0deg, rgba(67,165,234,1) 0%, rgba(241,245,248,1) 100
   }
 
   .container h2{
-    font-size: 48px;
+    font-size: 70px;
   }
 
   .container h3{
-    font-size: 36px;
+    font-size: 40px;
+  }
+
+  .close{
+    width: 50px;
   }
 
   .option, .option-atividades{
     max-width:100%;
     width:auto;
+    max-height: 300px;
+    height: 300px;
   }
-  
-  .option .div{
-    width: 80px;
-    height: 80px;
+
+  .option div{
+    width: 100px;
+    height: 100px;
   }
 
   .option div .number{
-    font-size: 40px;
+    font-size: 70px;
   }
 
-  .option, .option-atividades{
-    max-height: none;
-  }
   .option .description{
-    font-size: 36px;
+    font-size: 60px;
   }
+  
+  .option-atividades .question{
+    width: 100px;
+    height: 100px;
+    min-width: 100px;
+  }
+
+  .option-atividades .img{
+    height: 100%;
+    width: 100%;
+  }
+
+  .option-atividades .img img{
+    object-fit: contain;
+    max-width: 800px;
+    height: 100%;
+    max-height: 100%;
+  }
+
+  .option-atividades .question p{
+    font-size: 50px;
+  }
+
   .swal2-popup{
     width: 50em !important;
   }

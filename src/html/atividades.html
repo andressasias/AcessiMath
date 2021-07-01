@@ -30,7 +30,7 @@
         </div>
       </div>
       <ul class="menu" id="menu">
-        <li class="menu-item"><a href="/" class="menu-link">Home</a></li>
+        <li class="menu-item"><a href="/" class="menu-link">Home |</a></li>
         <li class="menu-item"><a href="/sobre" class="menu-link">Sobre</a></li>
       </ul>
     </nav>
@@ -56,12 +56,15 @@
             <div class="question">
               <p>{{ item.question }}</p>
             </div>
-              
-            <img
-              v-if="item.isImage"
-              :src="'/img/' + item.description"
-              width="20px"
-            />
+            
+            <div v-if="item.isImage" class="img">
+              <img
+                v-if="item.isImage"
+                :src="'/img/' + item.description"
+                width="20px"
+              />
+            </div>
+
             <h2 v-if="!item.isImage">{{ item.description }}</h2>
           </li>
         </ol>
