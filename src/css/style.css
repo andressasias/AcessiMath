@@ -1,8 +1,9 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;700&display=swap");
 
-
-*, *::before, *::after {
+*,
+*::before,
+*::after {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
@@ -14,7 +15,7 @@
   text-rendering: optimizeLegibility;
 }
 body {
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
   /*font-size: 1rem;*/
   font-weight: normal;
   line-height: 1.5;
@@ -26,7 +27,8 @@ img {
   width: 100%;
   height: auto;
 }
-a, button {
+a,
+button {
   font-family: inherit;
   font-size: inherit;
   line-height: inherit;
@@ -40,7 +42,7 @@ a, button {
   height: auto;
   width: 100%;
   max-width: 700px;
-  background: #FFF;
+  background: #fff;
   margin: 40px auto;
   -webkit-box-shadow: 0px 0px 16px 4px #d1d1d1;
   box-shadow: 0px 0px 16px 4px #d1d1d1;
@@ -48,20 +50,20 @@ a, button {
   padding: 30px 20px;
 }
 
-.container h2{
-  font-family: 'Oswald', sans-serif;
+.container h2 {
+  font-family: "Oswald", sans-serif;
   margin: 30px 0;
   font-size: 40px;
 }
 
-.container h3{
-  font-family: 'Oswald', sans-serif;
+.container h3 {
+  font-family: "Oswald", sans-serif;
   font-weight: 100;
   text-transform: uppercase;
   font-size: 14px;
 }
 .brand {
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
   font-size: 1.75rem;
   font-weight: 700;
   line-height: inherit;
@@ -72,7 +74,7 @@ a, button {
   width: 100%;
   padding: 1rem 2rem;
   color: #ffffff;
-  background: #43A5EA;
+  background: #43a5ea;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 3px rgba(0, 0, 0, 0.24);
 }
 @media only screen and (min-width: 768px) {
@@ -82,7 +84,7 @@ a, button {
     justify-content: space-between;
     align-items: center;
     margin: 0 auto;
- }
+  }
 }
 .navbar .navbrand {
   display: flex;
@@ -114,7 +116,7 @@ a, button {
 @media only screen and (min-width: 768px) {
   .navbar .navbrand .burger {
     display: none;
- }
+  }
 }
 .navbar .menu {
   /*width: 100%;*/
@@ -126,7 +128,7 @@ a, button {
   margin: 0.5rem 0;
 }
 .navbar .menu-link {
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
   font-size: 1rem;
   font-weight: 500;
   line-height: inherit;
@@ -149,29 +151,36 @@ a, button {
     justify-content: center;
     align-items: center;
     height: auto;
- }
+  }
   .navbar .menu-item {
     padding: 0;
     margin: 0 0.5rem;
- }
+  }
 }
 
-h2{
+h2 {
   text-align: center;
 }
 
-#app{
+#app {
   position: relative;
 }
 
-.close{
+#app .img-question{
+  height: 100px;
+  width: auto;
+  margin: auto;
+}
+
+.close {
   width: 20px;
   cursor: pointer;
-  position:absolute;
+  position: absolute;
   right: 0;
 }
 
-.option, .option-atividades{
+.option,
+.option-atividades {
   width: 100%;
   max-width: 500px;
   margin: 20px auto;
@@ -179,26 +188,25 @@ h2{
   text-align: center;
   border-radius: 17px;
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
-  background: #F7F7F7;
+  background: #f7f7f7;
   max-height: 150px;
   cursor: pointer;
-
-  
 }
 
-.option:hover, .option-atividades:hover{
+.option:hover,
+.option-atividades:hover {
   background: #d7eaf7;
 }
 
-.option-atividades{
+.option-atividades {
   display: flex;
   align-items: center;
 }
 
-.option-atividades .question{
+.option-atividades .question {
   width: 50px;
   height: 50px;
-  background: #7A4ED9;
+  background: #7a4ed9;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -207,24 +215,24 @@ h2{
   min-width: 50px;
 }
 
-.option-atividades .question p{
-  font-family: 'Oswald', sans-serif;
+.option-atividades .question p {
+  font-family: "Oswald", sans-serif;
   font-style: normal;
   font-weight: bold;
   font-size: 24px;
   line-height: 36px;
-  color: #FFFFFF;
+  color: #ffffff;
   text-transform: uppercase;
 }
 
-.option{
+.option {
   display: block;
 }
 
-.option div{
+.option div {
   width: 50px;
   height: 50px;
-  background: #7A4ED9;
+  background: #7a4ed9;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -232,128 +240,149 @@ h2{
   margin: auto;
 }
 
-.option div .number{
-    font-family: 'Oswald', sans-serif;
-    font-style: normal;
-    font-weight: bold;
-    font-size: 24px;
-    line-height: 36px;
-    color: #FFFFFF;
+.option div .number {
+  font-family: "Oswald", sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 36px;
+  color: #ffffff;
 }
 
-.option .description{
-  font-family: 'Roboto', sans-serif;
+.option .description {
+  font-family: "Roboto", sans-serif;
   margin-top: 10px;
   display: block;
   color: #000000;
 }
 
-.footer{
+.footer {
   padding: 10px 0;
   text-align: center;
   color: #252a32;
-  background: rgb(67,165,234);
-background: linear-gradient(0deg, rgba(67,165,234,1) 0%, rgba(241,245,248,1) 100%);
+  background: rgb(67, 165, 234);
+  background: linear-gradient(
+    0deg,
+    rgba(67, 165, 234, 1) 0%,
+    rgba(241, 245, 248, 1) 100%
+  );
 }
 
-.about-title{
+.about-title {
   margin-bottom: 40px;
   text-align: center;
 }
 
-.about-text p{
+.about-text p {
   margin-bottom: 20px;
 }
 
 /*Mobile*/
 @media screen and (max-width: 1200px) {
-  body{
+  body {
     font-size: 24px;
   }
 
-  .brand{
+  .brand {
     font-size: 60px;
   }
 
-  .navbar .menu-link{
+  .navbar .menu-link {
     font-size: 48px;
   }
-  .container{
-    max-width:100%
+  .container {
+    max-width: 100%;
   }
 
-  .container h2{
+  .container h2 {
     font-size: 70px;
   }
 
-  .container h3{
+  .container h3 {
     font-size: 40px;
   }
 
-  .close{
+  .close {
     width: 50px;
   }
 
-  .option, .option-atividades{
-    max-width:100%;
-    width:auto;
+  .option,
+  .option-atividades {
+    max-width: 100%;
+    width: auto;
     max-height: 300px;
     height: 300px;
   }
 
-  .option div{
+  .option div {
     width: 100px;
     height: 100px;
   }
 
-  .option div .number{
+  .option div .number {
     font-size: 70px;
   }
 
-  .option .description{
+  .option .description {
     font-size: 60px;
   }
-  
-  .option-atividades .question{
+
+  .option-atividades .question {
     width: 100px;
     height: 100px;
     min-width: 100px;
   }
 
-  .option-atividades .img{
+  .option-atividades .img {
     height: 100%;
     width: 100%;
   }
 
-  .option-atividades .img img{
+  .option-atividades .img img {
     object-fit: contain;
     max-width: 800px;
     height: 100%;
     max-height: 100%;
   }
 
-  .option-atividades .question p{
+  .option-atividades .question p {
     font-size: 50px;
   }
 
-  .swal2-popup{
+  .swal2-popup {
     width: 50em !important;
   }
 
-  .swal2-image{
+  .swal2-image {
     width: 280px !important;
   }
 
-  .swal2-title{
+  .swal2-title {
     font-size: 48px !important;
   }
 
-  .swal2-html-container{
+  .swal2-html-container {
     font-size: 36px !important;
   }
-  
-  .swal2-styled.swal2-confirm, .swal2-styled.swal2-cancel{
+
+  .swal2-styled.swal2-confirm,
+  .swal2-styled.swal2-cancel {
     font-size: 2em !important;
   }
-  
+}
+
+.debug {
+  position: fixed;
+  left: 0;
+  top: 0;
+  display: flex;
+  align-item: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 200px;
+  height: 100vh;
+  background: #000;
+  color: #fff;
+  font-size: 13px;
+  padding: 8px 24px;
 }

@@ -36,27 +36,29 @@
     </nav>
     <div class="container">
       <div id="app">
+        <div v-if="debug.length" v-html="debug" class="debug"></div>
         <div class="close">
-          <img src="../img/close.png">
+          <a href="/">
+            <img src="../img/close.png" />
+          </a>
         </div>
-        <h3>Atividades {{ level }} - {{ currentQuestion.titulo }}</h3>
-        <h2>{{ currentQuestion.descricao }}</h2>
-        <img
-        v-if="currentQuestion.questions[0].isImageQuestion"
-        :src="'/img/' + currentQuestion.questions[0].ImageQuestion"
-        width="20px"
+        <h3>Atividades {{ level }} - {{ current.titulo }}</h3>
+        <h2>{{ current.descricao }}</h2>
+        <img class="img-question"
+          v-if="current.questions.length && current.questions[0].isImageQuestion"
+          :src="'/img/' + current.questions[0].ImageQuestion"
         />
 
         <ol>
           <li
-            v-for="item in currentQuestion.questions"
-            v-on:click="selectAnswer(item)"
+            v-for="item in current.questions"
+            v-on:click="selectAnswer(item.question)"
             class="option-atividades"
           >
             <div class="question">
               <p>{{ item.question }}</p>
             </div>
-            
+
             <div v-if="item.isImage" class="img">
               <img
                 v-if="item.isImage"
@@ -72,7 +74,7 @@
     </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14"></script>
     <script type="text/javascript" src="/js/script-atividades.js"></script>
   </body>
 </html>
