@@ -23,9 +23,8 @@ app.get('/api/atividades/:nivel', async(req, res) => {
     const { params: { nivel } } = req
     const row = await db.selectAtividadeByLevel(nivel)
     res.json(row);
-    // res.json({ id })
 })
-//process.env.PORT
-app.listen(process.env.PORT, () => {
+
+app.listen(process.env.PORT || 3000, () => {
     console.log('Ok')
 })
